@@ -1,0 +1,131 @@
+<script src="../client-controllers/base-client-controller.js"></script>
+
+<!-- Nav -->
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">APP AUTONOMY</a>
+    <a class="navbar-brand" href="#"  id="orders" >ORDERS</a>
+  </div>
+</nav>
+<br>
+<div class="row order-hide">
+    <div class="col">
+      <p text-align="center">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
+      </p>
+</div>
+
+
+
+<table class="show-order table"></table>
+
+<div class="content container-fluid order-hide" style="background-color: #e3e3e3;">
+
+        <div class="reportingDiv ora_div" style="display:block;">
+    <label>Add Server Details:</label><br><br>
+        <form>
+            <div class="reportTable-container">
+                <table id="reportingTable" style="width:100%;">
+                    <thead>
+                        <th class="th1">Server Name</th>
+                        <th class="th2">CPU</th>
+                        <th class="th3">RAM</th>
+                        <th class="th4">Storage</th>
+                        <th class="th5">Description</th>
+                        <th class="th6"></th>
+                    </thead>
+                    <tr>
+                      <td><input type="text" class="server" id="getserver" name="servername"></td>
+                      <td><input type="text" class="cpu" id="cpu" ></td>
+                      <td><input type="text" class="ram" id="ram"></td>
+                      <td><input type="text" class="storage" id="storage"></td>
+                      <td><input type="text" class="desc" id="desc"></td>
+                      <td><a href="#" data-name="server" id="serverbtn" class="add-to-cart btn btn-primary">Add to cart</a></td>
+                    </tr>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+  </div>
+
+  <br><br>
+  <div class="reportingDiv ora_div" style="display:block;">
+    <label>Add Database Details:</label><br><br>
+        <form>
+            <div class="reportTable-container">
+                <table id="reportingTable" style="width:100%;">
+                    <thead>
+                        <th class="th1">Database Name</th>
+                        <th class="th2">PORT</th>
+                        <th class="th3">Hosting Server</th>
+                        <th class="th4">Size</th>
+                        <th class="th5">Description</th>
+                        <th class="th6"></th>
+                    </thead>
+                    <tr>
+                      <td><input type="text" class="db" id="getdb" name="dbname"></td>
+                      <td><input type="text" id="port" ></td>
+                      <td><input type="text" id="hostServer" ></td>
+                      <td><input type="text" id="size" ></td>
+                      <td><input type="text" id="descr"></td>
+                      <td><a href="#" data-name="db" id="dbbtn" class="add-to-cart btn btn-primary">Add to cart</a></td>
+                    </tr>
+                    <tbody>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </form>
+  </div>
+
+ <!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="show-cart table">
+
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"  data-dismiss="modal" id="order-now">Order now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+    body {
+  padding-top: 20px;
+}
+.card-title{
+                width: 100% !important;
+      height: 35px;
+}
+p{
+  margin-right: 20px;
+  text-align: right;
+}
+
+.show-cart li {
+  display: flex;
+}
+.card {
+  margin-bottom: 20px;
+}
+.card-img-top {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
