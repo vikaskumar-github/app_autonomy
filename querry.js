@@ -1,12 +1,12 @@
-
+require('dotenv').config({ path: './.env' })
 const Pool = require('pg').Pool;
 
 const pool = new Pool({
-    user: 'postgres',
-    host: 'pgdb1.clnxgtneg4tu.us-east-2.rds.amazonaws.com',
-    database: 'awsresource',
-    password: 'pg123456',
-    port: 5432
+    user: process.env.dbuser,
+    host: process.env.dbhost,
+    database: process.env.dbname,
+    password: process.env.dbpass,
+    port: process.env.dbport
 })
 
 const getserver = (req, res) => {
@@ -23,20 +23,36 @@ const getrds_db = (req, res) => {
   })
 }
 
+const getorders = (req, res) => {
+  pool.query('select * from orders', (error, results) => {
+    if (error) {res.status(500).send(error) }
+    res.status(200).send(results.rows);
+  })
+}
+
+const addorders = (req, res) => {
+  const {name,hostserver,port,size,description,ram,cpu,objecttype} = req.body;
+  pool.query('insert into orders(name,hostserver,port,size,description,ram,cpu,objecttype) values($1,$2,$3,$4,$5,$6,$7,$8)',[name,hostserver,port,size,description,ram,cpu,objecttype], (error, results) => {
+      if(error){throw error}
+      res.status(201).send('orders added');
+  })   
+  }
+
+
 const addserver = (req, res) => {
-    const {name,cpu,ram,storage,description} = req.body;
-    pool.query('insert into server(name,cpu,ram,storage,description) values($1,$2,$3,$4,$5)',[name,cpu,ram,storage,description], (error, results) => {
-        if(error){res.status(500).send(error)}
-        res.status(200).send('server added');
-    })
+  var {name,cpu,ram,storage,description} = req.body;
+  pool.query('insert into server(name,cpu,ram,storage,description) values($1,$2,$3,$4,$5)',[name,cpu,ram,storage,description], (error, results) => {
+      if(error){throw error}
+      res.status(201).send('server added');
+  })   
 }
 
 const addrds_db = (req, res) => {
-  const {name,hostserver,port,size,description} = req.body;
-  pool.query('insert into rds_db(name,hostserver,port,size,description) values($1,$2,$3,$4,$5)',[name,hostserver,port,size,description], (error, results) => {
-      if(error){res.status(500).send(error)}
-      res.status(201).send('rds_db added');
-  })
+const {name,hostserver,port,size,description} = req.body;
+pool.query('insert into rds_db(name,hostserver,port,size,description) values($1,$2,$3,$4,$5)',[name,hostserver,port,size,description], (error, results) => {
+    if(error){throw error}
+    res.status(201).send('rds_db added');
+})   
 }
 
 const delserver = (req,res) => {
@@ -61,5 +77,7 @@ module.exports = {
     addserver,
     addrds_db,
     delserver,
-    delrds_db
+    delrds_db,
+    addorders,
+    getorders
 }

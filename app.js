@@ -13,19 +13,21 @@ app.set('view engine','handlebars');
 
 app.use(express.static(path.join(__dirname, 'lib')));
 
-app.use(bodyParser.json());
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
+app.use(bodyParser.json());
 
 //home route
 app.get('/',(req,res)=>{
     res.render('base');
 })
 
-
+app.get('/getorders',db.getorders);
+app.post('/addorders',db.addorders);
 app.get('/getserver',db.getserver);
 app.get('/getrds_db',db.getrds_db);
 app.post('/addserver',db.addserver);
