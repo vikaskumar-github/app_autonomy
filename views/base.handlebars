@@ -1,9 +1,9 @@
 <script src="../client-controllers/base-client-controller.js"></script>
 
 <!-- Nav -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="background-color: #7975a0;">
   <div class="navbar-header">
-    <a class="navbar-brand" href="/">APP AUTONOMY</a>
+    <a id="nav" class="navbar-brand" href="/">APP AUTONOMY</a>
     <a class="navbar-brand" href="#"  id="orders" >ORDERS</a>
   </div>
 </nav>
@@ -22,8 +22,8 @@
 
 <div class="content container-fluid order-hide" style="background-color: #e3e3e3;">
 
-        <div class="reportingDiv ora_div" style="display:block;">
-    <label>Add Server Details:</label><br><br>
+    <div class="reportingDiv ora_div" style="display:block;">
+      <label><h4>Add Server Details:</h4></label><br>
         <form>
             <div class="reportTable-container">
                 <table id="reportingTable" style="width:100%;">
@@ -50,9 +50,9 @@
         </form>
   </div>
 
-  <br><br>
+  <br><br><br>
   <div class="reportingDiv ora_div" style="display:block;">
-    <label>Add Database Details:</label><br><br>
+    <label><h4>Add Database Details:</h4></label><br>
         <form>
             <div class="reportTable-container">
                 <table id="reportingTable" style="width:100%;">
@@ -75,7 +75,7 @@
                     <tbody>
                     </tbody>
                 </table>
-                <br>
+                <br><br><br>
             </div>
         </form>
   </div>
@@ -107,6 +107,20 @@
 <style>
     body {
   padding-top: 20px;
+  color:rgb(0, 0, 0);
+}
+#orders{
+  text-align: left;
+  color:rgb(0, 0, 0);
+
+}
+#nav{
+  text-shadow: 0 -3px 3px rgba(255, 255, 255, 0.25);
+  color:rgb(0, 0, 0);
+  font-style:bold;
+  font-family:'Times New Roman', Times, serif;
+  font-size:xx-large;
+  text-align: left;
 }
 .card-title{
                 width: 100% !important;
