@@ -36,11 +36,11 @@
                         <th class="th6"></th>
                     </thead>
                     <tr>
-                      <td><input type="text" class="server" id="getserver" name="servername"></td>
-                      <td><input type="text" class="cpu" id="cpu" ></td>
-                      <td><input type="text" class="ram" id="ram"></td>
-                      <td><input type="text" class="storage" id="storage"></td>
-                      <td><input type="text" class="desc" id="desc"></td>
+                      <td><input type="text" class="server" id="getserver" name="servername" required/></td>
+                      <td><input type="number" class="cpu" id="cpu" required></td>
+                      <td><input type="number" class="ram" id="ram" required></td>
+                      <td><input type="number" class="storage" id="storage" required></td>
+                      <td><input type="text" class="desc" id="desc" required></td>
                       <td><a href="#" data-name="server" id="serverbtn" class="add-to-cart btn btn-primary">Add to cart</a></td>
                     </tr>
                     <tbody>
@@ -66,9 +66,9 @@
                     </thead>
                     <tr>
                       <td><input type="text" class="db" id="getdb" name="dbname"></td>
-                      <td><input type="text" id="port" ></td>
-                      <td><input type="text" id="hostServer" ></td>
-                      <td><input type="text" id="size" ></td>
+                      <td><input type="number" id="port" ></td>
+                      <td><input type="number" id="hostServer" ></td>
+                      <td><input type="number" id="size" ></td>
                       <td><input type="text" id="descr"></td>
                       <td><a href="#" data-name="db" id="dbbtn" class="add-to-cart btn btn-primary">Add to cart</a></td>
                     </tr>
@@ -130,7 +130,10 @@ p{
   margin-right: 20px;
   text-align: right;
 }
+#pp th{
 
+  padding-right:50px;
+}
 .show-cart li {
   display: flex;
 }
