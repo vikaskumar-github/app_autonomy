@@ -29,18 +29,18 @@
                 <table id="reportingTable" style="width:100%;">
                     <thead>
                         <th class="th1">Server Name</th>
-                        <th class="th2">CPU</th>
-                        <th class="th3">RAM</th>
-                        <th class="th4">Size</th>
+                        <th class="th2">Instance Type</th>
+                        <th class="th3">Key File Name(.pem)</th>
+                        <th class="th4">Size of Root</th>
                         <th class="th5">Description</th>
                         <th class="th6"></th>
                     </thead>
                     <tr>
                       <td><input type="text" class="server" id="getserver" name="servername" required/></td>
-                      <td><input type="number" class="cpu" id="cpu" required></td>
-                      <td><input type="number" class="ram" id="ram" required></td>
+                      <td><input class="inst_nm" id="inst_nm" value="t2.micro" disabled></td>
+                      <td><input type="text" class="kfile" id="kfile" required></td>
                       <td><input type="number" class="storage" id="storage" required></td>
-                      <td><input type="text" class="desc" id="desc" required></td>
+                      <td><input type="text" class="desc" id="desc"></td>
                       <td><a href="#" data-name="server" id="serverbtn" class="add-to-cart btn btn-primary">Add to cart</a></td>
                     </tr>
                     <tbody>
@@ -59,16 +59,16 @@
                     <thead>
                         <th class="th1">Database Name</th>
                         <th class="th2">PORT</th>
-                        <th class="th3">Hosting Server</th>
+                        <th class="th3">Master User Password</th>
                         <th class="th4">Size</th>
                         <th class="th5">Description</th>
                         <th class="th6"></th>
                     </thead>
                     <tr>
                       <td><input type="text" class="db" id="getdb" name="dbname"></td>
-                      <td><input type="number" id="port" ></td>
-                      <td><input type="number" id="hostServer" ></td>
-                      <td><input type="number" id="size" ></td>
+                      <td><input type="number" id="port" value="5432"></td>
+                      <td><input type="password" id="mpass" ></td>
+                      <td><input type="number" id="size" value="20"></td>
                       <td><input type="text" id="descr"></td>
                       <td><a href="#" data-name="db" id="dbbtn" class="add-to-cart btn btn-primary">Add to cart</a></td>
                     </tr>

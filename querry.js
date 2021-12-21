@@ -20,22 +20,23 @@ var updatestatus = (status,name) => {
 }
 
 const getorders = (req, res) => {
-  pool.query('select * from orders', (error, results) => {
+  pool.query('select * from orders ', (error, results) => {
     if (error) {res.status(500).send(error) }
     res.status(200).send(results.rows);
   })
 }
 
 const addorders = (req, res) => {
-  const {name,hostserver,port,size,description,ram,cpu,objecttype} = req.body;
-  pool.query('insert into orders(name,hostserver,port,size,description,ram,cpu,objecttype) values($1,$2,$3,$4,$5,$6,$7,$8)',[name,hostserver,port,size,description,ram,cpu,objecttype], (error, results) => {
+  const {name,mpass,port,size,description,inst_nm,kfile,objecttype} = req.body;
+  console.log(req.body);
+  pool.query('insert into orders(name,mpass,port,size,description,inst_nm,kfile,objecttype) values($1,$2,$3,$4,$5,$6,$7,$8)',[name,mpass,port,size,description,inst_nm,kfile,objecttype], (error, results) => {
       if(error){
         console.log(error)
         res.status(500).send('failed');
       }
       else{
         res.status(201).send('orders added');
-        awsint.create(updatestatus, name,hostserver,port,size,description,ram,cpu,objecttype);
+        awsint.create(updatestatus, name,mpass,port,size,description,inst_nm,kfile,objecttype);
       }
   })  
 }
@@ -49,7 +50,7 @@ const delorders = (req,res) => {
     }
     else{
       res.status(200).send('delete processing..');
-      // awsint.create(updatestatus, name,hostserver,port,size,description,ram,cpu,objecttype);
+      // awsint.create(updatestatus, name,MPass,port,size,description,ram,cpu,objecttype);
     }
   })
 }
