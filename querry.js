@@ -20,7 +20,7 @@ var updatestatus = (status,name) => {
 }
 
 const getorders = (req, res) => {
-  pool.query('select * from orders ', (error, results) => {
+  pool.query('select * from orders order by created desc', (error, results) => {
     if (error) {res.status(500).send(error) }
     res.status(200).send(results.rows);
   })
@@ -28,6 +28,7 @@ const getorders = (req, res) => {
 
 const addorders = (req, res) => {
   const {name,mpass,port,size,description,inst_nm,kfile,objecttype} = req.body;
+  console.log("inst_nm "+inst_nm+"  kfile "+kfile)
   console.log(req.body);
   pool.query('insert into orders(name,mpass,port,size,description,inst_nm,kfile,objecttype) values($1,$2,$3,$4,$5,$6,$7,$8)',[name,mpass,port,size,description,inst_nm,kfile,objecttype], (error, results) => {
       if(error){
