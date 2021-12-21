@@ -29,12 +29,6 @@ app.get('/',(req,res)=>{
 app.get('/getorders',db.getorders);
 app.post('/addorders',db.addorders);
 app.post('/delorders',db.delorders);
-app.get('/getserver',db.getserver);
-app.get('/getrds_db',db.getrds_db);
-app.post('/addserver',db.addserver);
-app.post('/addrds_db',db.addrds_db);
-app.post('/delserver',db.delserver);
-app.post('/delrds_db',db.delrds_db);
 
 
 app.listen(port, () =>{

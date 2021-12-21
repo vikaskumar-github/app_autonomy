@@ -21,7 +21,7 @@ var create = (updatestatus, name,hostserver,port,size,description,ram,cpu,object
     }
     else if(objecttype === 'database'){
         console.log("creating database"+ name);
-        exec("aws rds create-db-instance --db-instance-identifier "+name+" --db-instance-class db.t2.micro --engine postgres --engine-version 12.7 --master-username postgres --master-user-password pg123456 --allocated-storage 20 --no-auto-minor-version-upgrade", (error, stdout, stderr) => {
+        exec("aws rds create-db-instance --db-instance-identifier "+name+" --db-instance-class db.t2.micro --engine postgres --engine-version 12.7 --master-username postgres --master-user-password pg123456 --allocated-storage 20 --port 5432 --no-auto-minor-version-upgrade", (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
                 updatestatus('failed',name);
