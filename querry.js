@@ -28,8 +28,6 @@ const getorders = (req, res) => {
 
 const addorders = (req, res) => {
   const {name,mpass,port,size,description,inst_nm,kfile,objecttype} = req.body;
-  console.log("inst_nm "+inst_nm+"  kfile "+kfile)
-  console.log(req.body);
   pool.query('insert into orders(name,mpass,port,size,description,inst_nm,kfile,objecttype) values($1,$2,$3,$4,$5,$6,$7,$8)',[name,mpass,port,size,description,inst_nm,kfile,objecttype], (error, results) => {
       if(error){
         console.log(error)
