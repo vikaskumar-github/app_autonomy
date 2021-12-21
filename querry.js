@@ -1,5 +1,6 @@
 require('dotenv').config({ path: './.env' })
 const Pool = require('pg').Pool;
+const awsint = require('./aws_integration');
 
 const pool = new Pool({
     user: process.env.dbuser,
@@ -9,18 +10,13 @@ const pool = new Pool({
     port: process.env.dbport
 })
 
-const getserver = (req, res) => {
-    pool.query('SELECT * FROM server', (error, results) => {
-      if (error) {res.status(500).send(error)}
-      res.status(200).send(results.rows);
-    })
-}
 
-const getrds_db = (req, res) => {
-  pool.query('select * from rds_db', (error, results) => {
-    if (error) {res.status(500).send(error) }
-    res.status(200).send(results.rows);
-  })
+
+var updatestatus = (status,name) => { 
+  pool.query('update orders set status=$1 where name=$2',[status,name], (error, results) => {
+      if(error){throw error}
+      console.log('Order status updated');
+  })  
 }
 
 const getorders = (req, res) => {
@@ -33,11 +29,44 @@ const getorders = (req, res) => {
 const addorders = (req, res) => {
   const {name,hostserver,port,size,description,ram,cpu,objecttype} = req.body;
   pool.query('insert into orders(name,hostserver,port,size,description,ram,cpu,objecttype) values($1,$2,$3,$4,$5,$6,$7,$8)',[name,hostserver,port,size,description,ram,cpu,objecttype], (error, results) => {
-      if(error){throw error}
-      res.status(201).send('orders added');
-  })   
-  }
+      if(error){
+        console.log(error)
+        res.status(500).send('failed');
+      }
+      else{
+        res.status(201).send('orders added');
+        awsint.create(updatestatus, name,hostserver,port,size,description,ram,cpu,objecttype);
+      }
+  })  
+}
 
+const delorders = (req,res) => {
+  const {name} = req.body;
+  pool.query('delete from orders where name = $1', [name], (error,results)=>{
+    if(error){
+      console.log(error)
+      res.status(500).send('failed');
+    }
+    else{
+      res.status(200).send('delete processing..');
+      // awsint.create(updatestatus, name,hostserver,port,size,description,ram,cpu,objecttype);
+    }
+  })
+}
+
+const getserver = (req, res) => {
+  pool.query('SELECT * FROM server', (error, results) => {
+    if (error) {res.status(500).send(error)}
+    res.status(200).send(results.rows);
+  })
+}
+
+const getrds_db = (req, res) => {
+pool.query('select * from rds_db', (error, results) => {
+  if (error) {res.status(500).send(error) }
+  res.status(200).send(results.rows);
+})
+}
 
 const addserver = (req, res) => {
   var {name,cpu,ram,storage,description} = req.body;
@@ -79,5 +108,7 @@ module.exports = {
     delserver,
     delrds_db,
     addorders,
-    getorders
+    getorders,
+    delorders,
+    updatestatus
 }
