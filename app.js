@@ -25,7 +25,12 @@ app.use(bodyParser.json());
 app.get('/',(req,res)=>{
     res.render('base');
 })
-
+app.get('/addServer' ,(req,res) =>{
+  res.render('addServer');
+})
+app.get('/addDatabase' ,(req,res) =>{
+  res.render('addDatabase');
+})
 app.get('/getorders',db.getorders);
 app.post('/addorders',db.addorders);
 app.post('/delorders',db.delorders);

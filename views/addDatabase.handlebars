@@ -15,45 +15,34 @@
       </p>
 </div>
 
-
-
-{{!-- <table class="show-order table"></table>
-
-
-<div class="content container-fluid order-hide" style="background-color: #e3e3e3;">
-
+<div class="container" style="background-color: #e3e3e3;">
     <div class="reportingDiv ora_div" style="display:block;">
-      <label><h4>Add Server Details:</h4></label><br>
-        <form>
-            <div class="reportTable-container">
-                <table id="reportingTable" style="width:100%;">
-                    <thead>
-                        <th class="th1">Server Name</th>
-                        <th class="th2">Instance Type</th>
-                        <th class="th3">Key File Name(.pem)</th>
-                        <th class="th4">Size of Root</th>
-                        <th class="th5">Description</th>
-                        <th class="th6"></th>
-                    </thead>
-                    <tr>
-                      <td><input type="text" class="server" id="getserver" name="servername" required/></td>
-                      <td><input class="inst_nm" id="inst_nm" value="t2.micro" disabled></td>
-                      <td><input type="text" class="kfile" id="kfile" required></td>
-                      <td><input type="number" class="storage" id="storage" required></td>
-                      <td><input type="text" class="desc" id="desc"></td>
-                      <td><a href="#" data-name="server" id="serverbtn" class="add-to-cart btn btn-primary">Add to cart</a></td>
-                    </tr>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-        </form>
+    <label><h3>Add Database Details:</h3></label><br>
+    <form>
+  <div class="col-md-5">
+    <div class="form-group">
+    <label for="th1">Database Name</label>
+    <input type="text" class=" form-control db" id="getdb" name="dbname">
+    
   </div>
-
-  <br><br><br>
-  <div class="reportingDiv ora_div" style="display:block;">
-    <label><h4>Add Database Details:</h4></label><br>
-        <form>
+  <div class="form-group">
+    <label for="th2">PORT</label>
+    <input type="number" class=" form-control" id="port" value="5432">
+  </div>
+  <div class="form-group">
+    <label for="th3">Master User Password</label>
+    <input type="number" class="form-control" id="size" value="20">
+    
+  </div>
+  <div class="form-group">
+    <label for="th4">Size</label>
+    <input type="text" class="form-control" id="descr">
+  </div>
+  <a href="#" data-name="db" id="dbbtn" class="add-to-cart btn btn-primary">Add to cart</a>
+  
+  </div>
+</form>
+        {{!-- <form>
             <div class="reportTable-container">
                 <table id="reportingTable" style="width:100%;">
                     <thead>
@@ -77,62 +66,11 @@
                 </table>
                 <br><br><br>
             </div>
-        </form>
-  </div> --}}
-
-  {{!-- <div class="row">
-  <div class="column">
-<div class="container">
-      Add Server Details
-      <a href="https://www.w3docs.com/">
-        <span class="link"></span>
-      </a>
-    </div>
-  </div>
-  <div class="column">
-     <div class="container">
-      Add Database Details
-      <a href="https://www.w3docs.com/">
-        <span class="link"></span>
-      </a>
-    </div> 
-  </div>
+        </form> --}}
+  </div> 
 </div>
 
-   --}}
- 
- <div class="container">
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-     <img class="card-img-top" src="../img/server.jpg" alt="Card image cap">
-      <div class="card-body"> 
-        <div class="container">
-        <h2 class="card-title">Add Database Details</h2>
-         <a href="/addDatabase" class="btn btn-primary">Add</a>
-        </div>
-        
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card" >
-       <img class="card-img-top" src="./db.png" alt="Card image cap">
-      <div class="card-body">
-        <div class="container">
-          <h2 class="card-title">Add server Details</h2>
-        <a href="/addServer" class="btn btn-primary">Add</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- </div>
-
-
-
- <!-- Modal -->
+   <!-- Modal -->
 <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -156,7 +94,9 @@
   </div>
 </div>
 
-<style>
+
+
+  <style>
     body {
   padding-top: 20px;
   color:rgb(0, 0, 0);
