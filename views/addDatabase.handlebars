@@ -8,7 +8,12 @@
   </div>
 </nav>
 <br>
+<div class="container" align="center">
+  <label class="heading"><h1>Add Database Details</h1></label>
+</div>
+<br>
 <div class="row order-hide">
+    
     <div class="col">
       <p text-align="center">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
@@ -17,7 +22,7 @@
 
 <div class="container" style="background-color: #e3e3e3;">
     <div class="reportingDiv ora_div" style="display:block;">
-    <label><h3>Add Database Details:</h3></label><br>
+    <label><h4>Please fill the form to proceed:</h4></label><br>
     <form>
   <div class="col-md-5">
     <div class="form-group">
@@ -38,7 +43,12 @@
     <label for="th4">Size</label>
     <input type="text" class="form-control" id="descr">
   </div>
-  <a href="#" data-name="db" id="dbbtn" class="add-to-cart btn btn-primary">Add to cart</a>
+  <div class="form-group">
+    <label for="th4">Description</label>
+    <input type="text" class="form-control desc" id="desc">
+  </div>
+
+  <br>
   
   </div>
 </form>
@@ -68,7 +78,14 @@
             </div>
         </form> --}}
   </div> 
+  
 </div>
+<br>
+<br>
+<div align="center">
+  <a href="#" data-name="db" id="dbbtn" class="add-to-cart btn btn-primary">Add to cart</a>
+</div>
+
 
    <!-- Modal -->
 <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -139,6 +156,11 @@ p{
 }
 h2 {
     text-align: center;
+}
+.heading{
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
 }
 
 
