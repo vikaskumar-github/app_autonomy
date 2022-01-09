@@ -1,12 +1,12 @@
 <script src="../client-controllers/base-client-controller.js"></script>
 
 <!-- Nav -->
-<nav class="navbar navbar-default" style="background-color: #7975a0;">
+{{!-- <nav class="navbar navbar-default" style="background-color: #7975a0;">
   <div class="navbar-header">
     <a id="nav" class="navbar-brand" href="/">APP AUTONOMY</a>
     <a class="navbar-brand" href="#"  id="orders" >ORDERS</a>
   </div>
-</nav>
+</nav> --}}
 <br>
 <div class="container" align="center">
   <label class="heading"><h1>Add Server Details</h1></label>
@@ -83,7 +83,7 @@
 <br>
 <br>
 <div align="center">
-  <a href="#" data-name="db" id="dbbtn" class="add-to-cart btn btn-primary">Add to cart</a>
+  <a href="#" data-name="server" id="serverbtn" class="add-to-cart btn btn-primary">Add to cart</a>
 </div> 
 
    <!-- Modal -->
@@ -111,56 +111,3 @@
 </div>
 
 
-  <style>
-    body {
-  padding-top: 20px;
-  color:rgb(0, 0, 0);
-}
-#orders{
-  text-align: left;
-  color:rgb(0, 0, 0);
-
-}
-.heading{
-  
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
-}
-#nav{
-  text-shadow: 0 -3px 3px rgba(255, 255, 255, 0.25);
-  color:rgb(0, 0, 0);
-  font-style:bold;
-  font-family:'Times New Roman', Times, serif;
-  font-size:xx-large;
-  text-align: left;
-}
-.card-title{
-                width: 100% !important;
-      height: 35px;
-}
-p{
-  margin-right: 20px;
-  text-align: right;
-}
-#pp th{
-
-  padding-right:50px;
-}
-.show-cart li {
-  display: flex;
-}
-.card {
-  margin-bottom: 20px;
-}
-.card-img-top {
-  width: 200px;
-  height: 200px;
-  align-self: center;
-}
-h2 {
-    text-align: center;
-}
-
-
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

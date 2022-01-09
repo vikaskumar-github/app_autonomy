@@ -22,6 +22,7 @@ var updatestatus = (status,name) => {
 const getorders = (req, res) => {
   pool.query('select * from orders order by created desc', (error, results) => {
     if (error) {res.status(500).send(error) }
+    else
     res.status(200).send(results.rows);
   })
 }

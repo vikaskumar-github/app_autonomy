@@ -1,14 +1,14 @@
 <script src="../client-controllers/base-client-controller.js"></script>
 
 <!-- Nav -->
-<nav class="navbar navbar-default" style="background-color: #7975a0;">
+{{!-- <nav class="navbar navbar-default" style="background-color: #7975a0;">
   <div class="navbar-header">
     <h1><a id="nav" class="navbar-brand" href="/" style="font:bolder; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">APP AUTONOMY</a></h1>
     </h1>
     <a class="navbar-brand" href="#"  id="orders" >ORDERS</a>
   </div>
    <br>
-</nav>
+</nav> --}}
 <br>
 {{!-- <div class="col-md-3 icon_box">
       <a href="/addDatabase" class="thumbnail col2" data-toggle="popover_info" data-full="img2">
@@ -19,10 +19,7 @@
 {{!-- <div class="bg-image hover-zoom">
   <img src="/img/utility.png" class="w-100" />
 </div>    --}}
-<div class="container">
-  <img src="img_avatar.png" alt="Avatar" class="image">
-  <div class="overlay">My Name is John</div>
-</div>
+
 
 <div class="row order-hide">
     <div class="col">
@@ -33,10 +30,10 @@
 
 
 
-{{!-- <table class="show-order table"></table>
+<table class="show-order table"></table>
 
 
-<div class="content container-fluid order-hide" style="background-color: #e3e3e3;">
+{{!-- <div class="content container-fluid order-hide" style="background-color: #e3e3e3;">
 
     <div class="reportingDiv ora_div" style="display:block;">
       <label><h4>Add Server Details:</h4></label><br>
@@ -117,7 +114,7 @@
 
    --}}
  
- <div class="container">
+ <div class="container order-hide">
     <div class="row">
   <div class="col-sm-6">
     <div class="card">
@@ -172,116 +169,3 @@
   </div>
 </div>
 
-<style>
-  * {box-sizing: border-box}
-
-/* Container needed to position the overlay. Adjust the width as needed */
-.container {
-  position: relative;
-  width: 50%;
-  max-width: 300px;
-}
-
-/* Make the image to responsive */
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* The overlay effect - lays on top of the container and over the image */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
-  color: #f1f1f1;
-  width: 100%;
-  transition: .5s ease;
-  opacity:0;
-  color: white;
-  font-size: 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-/* When you mouse over the container, fade in the overlay title */
-.container:hover .overlay {
-  opacity: 1;
-}
-    body {
-  padding-top: 20px;
-  color:rgb(0, 0, 0);
-}
-#orders{
-  text-align: left;
-  color:rgb(0, 0, 0);
-
-}
-#nav{
-  text-shadow: 0 -3px 3px rgba(255, 255, 255, 0.25);
-  color:rgb(0, 0, 0);
-  font-style:bold;
-  font-family:'Times New Roman', Times, serif;
-  font-size:xx-large;
-  text-align: left;
-}
-.card-title{
-                width: 100% !important;
-      height: 35px;
-}
-p{
-  margin-right: 20px;
-  text-align: right;
-}
-#pp th{
-
-  padding-right:50px;
-}
-.show-cart li {
-  display: flex;
-}
-.card {
-  margin-bottom: 20px;
-}
-.card-img-top {
-  width: 200px;
-  height: 200px;
-  align-self: center;
-}
-h2 {
-    text-align: center;
-}
-
-.icon_box{
-  -webkit-text-align: center;
-  text-align: center;
-}
-.icon_box .thumbnail{
-	width: 150px;
-	height: 175px;
-	padding: 0 !important;
-}
-.icon_box .thumbnail:hover{
-  border: 5px solid lightgrey;
-  text-decoration: none;
-}
-.icon_box .icon_text{
-	color: black;
-	font-weight: bold;
-  height:40px;
-  font-size:14px;
-}
-.img1,.img2,.img3{
-	width: 400px;
-	height:80px;
-	padding: 0 !important;
-}
-.icon_box .icon_text{
-	color: black;
-	font-weight: bold;
-  height:40px;
-  font-size:14px;
-}
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

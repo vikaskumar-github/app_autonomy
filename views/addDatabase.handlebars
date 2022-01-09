@@ -1,12 +1,12 @@
 <script src="../client-controllers/base-client-controller.js"></script>
 
 <!-- Nav -->
-<nav class="navbar navbar-default" style="background-color: #7975a0;">
+{{!-- <nav class="navbar navbar-default" style="background-color: #7975a0;">
   <div class="navbar-header">
     <a id="nav" class="navbar-brand" href="/">APP AUTONOMY</a>
     <a class="navbar-brand" href="#"  id="orders" >ORDERS</a>
   </div>
-</nav>
+</nav> --}}
 <br>
 <div class="container" align="center">
   <label class="heading"><h1>Add Database Details</h1></label>
@@ -32,20 +32,20 @@
   </div>
   <div class="form-group">
     <label for="th2">PORT</label>
-    <input type="number" class=" form-control" id="port" value="5432">
+    <input type="number" class=" form-control port" id="port" value="5432">
   </div>
   <div class="form-group">
     <label for="th3">Master User Password</label>
-    <input type="number" class="form-control" id="size" value="20">
+    <input type="password" class="form-control" id="mpass" >
     
   </div>
   <div class="form-group">
     <label for="th4">Size</label>
-    <input type="text" class="form-control" id="descr">
+    <input type="number" class="form-control" id="size" value="20">
   </div>
   <div class="form-group">
     <label for="th4">Description</label>
-    <input type="text" class="form-control desc" id="desc">
+    <input type="text" class="form-control desc" id="descr">
   </div>
 
   <br>
@@ -111,58 +111,3 @@
   </div>
 </div>
 
-
-
-  <style>
-    body {
-  padding-top: 20px;
-  color:rgb(0, 0, 0);
-}
-#orders{
-  text-align: left;
-  color:rgb(0, 0, 0);
-
-}
-#nav{
-  text-shadow: 0 -3px 3px rgba(255, 255, 255, 0.25);
-  color:rgb(0, 0, 0);
-  font-style:bold;
-  font-family:'Times New Roman', Times, serif;
-  font-size:xx-large;
-  text-align: left;
-}
-.card-title{
-                width: 100% !important;
-      height: 35px;
-}
-p{
-  margin-right: 20px;
-  text-align: right;
-}
-#pp th{
-
-  padding-right:50px;
-}
-.show-cart li {
-  display: flex;
-}
-.card {
-  margin-bottom: 20px;
-}
-.card-img-top {
-  width: 200px;
-  height: 200px;
-  align-self: center;
-}
-h2 {
-    text-align: center;
-}
-.heading{
-  
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
-}
-
-
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

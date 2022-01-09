@@ -1,0 +1,88 @@
+<script src="../client-controllers/base-client-controller.js"></script>
+ <div class="col">
+      <p text-align="center">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button>
+      </p>
+</div>
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="show-cart table">
+
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"  data-dismiss="modal" id="order-now">Order now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="show-order table">
+    <tr>
+        <td>table</td>
+    </tr>
+</table>
+
+<style>
+    body {
+  padding-top: 20px;
+  color:rgb(0, 0, 0);
+}
+#orders{
+  text-align: left;
+  color:rgb(0, 0, 0);
+
+}
+#nav{
+  text-shadow: 0 -3px 3px rgba(255, 255, 255, 0.25);
+  color:rgb(0, 0, 0);
+  font-style:bold;
+  font-family:'Times New Roman', Times, serif;
+  font-size:xx-large;
+  text-align: left;
+}
+.card-title{
+                width: 100% !important;
+      height: 35px;
+}
+p{
+  margin-right: 20px;
+  text-align: right;
+}
+#pp th{
+
+  padding-right:50px;
+}
+.show-cart li {
+  display: flex;
+}
+.card {
+  margin-bottom: 20px;
+}
+.card-img-top {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+h2 {
+    text-align: center;
+}
+.heading{
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
