@@ -31,7 +31,7 @@ app.get('/addServer' ,(req,res) =>{
 app.get('/addDatabase' ,(req,res) =>{
   res.render('addDatabase');
 })
-app.get('/orders' ,(req,res) =>{
+app.get('/showOrders' ,(req,res) =>{
   res.render('showOrders');
 })
 app.get('/getorders',db.getorders);

@@ -1,39 +1,60 @@
 <script src="../client-controllers/base-client-controller.js"></script>
- <div class="col">
-      <p text-align="center">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button>
-      </p>
-</div>
-<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <table class="show-cart table">
 
-        </table>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"  data-dismiss="modal" id="order-now">Order now</button>
-      </div>
-    </div>
-  </div>
-</div>
+<table class="show-order table"></table>
 
-<table class="show-order table">
-    <tr>
-        <td>table</td>
-    </tr>
-</table>
+<script>
+function getdata(){
+      // For displaying servers
+      var output = ""
+        + "<thead>"
+        + "<th class='th1'>" + "Name" + "</th>"
+        + "<th class='th1'>" + "Instance Type / Port" + "</th>"
+        + "<th class='th1'>" + "Key File / Password" + "</th>"
+        + "<th class='th1'>" + "Size" + "</th>"
+        + "<th class='th1'>" + "Description" + "</th>"
+        + "<th class='th1'>" + "Status" + "</th>"
+        + "</thead>"
+      $.get("/getorders").done(data => {
+        for (i in data){
+          if(data[i].objecttype === 'server'){
+            console.log(data[i]);
+            output += "<tr>"
+              + "<td>" + data[i].name + "</td>" 
+              + "<td>" + data[i].inst_nm +"</td>" 
+              + "<td>" + data[i].kfile +  "</td>"
+              + "<td>" + data[i].size + " GB" + "</td>"  
+              + "<td>" + data[i].description + "</td>" 
+              + "<td>" + data[i].status + "</td>"
+              +  "</tr>";          
+          }
+          if(data[i].objecttype === 'database'){
+            console.log(data[i]);
+            output += "<tr>"
+              + "<td>" + data[i].name + "</td>" 
+              + "<td>" + data[i].port + "</td>" 
+              + "<td>" + "*******" + "</td>"
+              + "<td>" + data[i].size + " GB" + "</td>"  
+              + "<td>" + data[i].description + "</td>"
+              + "<td>" + data[i].status + "</td>" 
+              +  "</tr>";          
+          }                      
+          }
+        $(".show-order").html(output); 
+        $(".order-hide").hide();                
+      })
+      .fail( error => {
+        console.log(error);
+      })   
+    };
 
-<style>
+  window.onload = function() {
+  getdata();
+  };
+
+</script>
+
+  <style>
     body {
   padding-top: 20px;
   color:rgb(0, 0, 0);
@@ -42,6 +63,11 @@
   text-align: left;
   color:rgb(0, 0, 0);
 
+}
+.heading{
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
 }
 #nav{
   text-shadow: 0 -3px 3px rgba(255, 255, 255, 0.25);
@@ -76,11 +102,6 @@ p{
 }
 h2 {
     text-align: center;
-}
-.heading{
-  
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
 }
 
 

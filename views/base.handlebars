@@ -1,17 +1,9 @@
 <script src="../client-controllers/base-client-controller.js"></script>
 
-<!-- Nav -->
-{{!-- <nav class="navbar navbar-default" style="background-color: #7975a0;">
-  <div class="navbar-header">
-    <h1><a id="nav" class="navbar-brand" href="/" style="font:bolder; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">APP AUTONOMY</a></h1>
-    </h1>
-    <a class="navbar-brand" href="#"  id="orders" >ORDERS</a>
-  </div>
-   <br>
-</nav> --}}
+
 <br>
 
-<div class="row order-hide">
+<div class="row">
     <div class="col">
       <p text-align="center">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
@@ -20,10 +12,8 @@
 
 
 
-<table class="show-order table"></table>
-
-
-{{!-- <div class="content container-fluid order-hide" style="background-color: #e3e3e3;">
+{{!-- 
+<div class="content container-fluid order-hide" style="background-color: #e3e3e3;">
 
     <div class="reportingDiv ora_div" style="display:block;">
       <label><h4>Add Server Details:</h4></label><br>
@@ -81,28 +71,11 @@
                 <br><br><br>
             </div>
         </form>
-  </div> --}}
+  </div>
 
-  {{!-- <div class="row">
-  <div class="column">
-<div class="container">
-      Add Server Details
-      <a href="https://www.w3docs.com/">
-        <span class="link"></span>
-      </a>
-    </div>
-  </div>
-  <div class="column">
-     <div class="container">
-      Add Database Details
-      <a href="https://www.w3docs.com/">
-        <span class="link"></span>
-      </a>
-    </div> 
-  </div>
 </div>
-
    --}}
+
 <div class="container order-hide"> 
   <div class="col-md-3 icon_box">
     <a href="/addDatabase" class="thumbnail col4" data-toggle="popover_info" data-full="img2">
@@ -117,41 +90,12 @@
     </a>
   </div>
    <div class="col-md-3 icon_box">
-    <a href="#" class="thumbnail col3" data-toggle="popover_info" data-full="img2">
+    <a href="/showOrders" class="thumbnail col3" data-toggle="popover_info" data-full="img2">
       <div class="icon_text">View Orders</div>
       <img src="img/orders.png">
     </a>
   </div>
 </div>
- {{!-- <div class="container order-hide">
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-     <img class="card-img-top" src="img/server.jpg" alt="Card image cap">
-      <div class="card-body"> 
-        <div class="container">
-        <h2 class="card-title">Add Database Details</h2>
-         <a href="/addDatabase" class="btn btn-primary">Add</a>
-        </div>
-        
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card" >
-       <img class="card-img-top" src="img/utility.png" alt="Card image cap">
-      <div class="card-body">
-        <div class="container">
-          <h2 class="card-title">Add server Details</h2>
-        <a href="/addServer" class="btn btn-primary">Add</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- </div> --}}
-
 
 
  <!-- Modal -->
