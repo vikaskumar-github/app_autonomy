@@ -11,7 +11,7 @@ app.set('views',path.join(__dirname,'views'));
 app.engine('handlebars', handlebars.engine({defaultLayout:'layout'}));
 app.set('view engine','handlebars');
 
-app.use(express.static(path.join(__dirname, 'lib')));
+app.use(express.static(path.join(__dirname, 'lib/public')));
 
 
 app.use(
