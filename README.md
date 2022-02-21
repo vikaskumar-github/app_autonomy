@@ -1,14 +1,14 @@
 # app_autonomy
 
-create .env file in main directory. And add postgres db credentials into that.
-dbuser=postgres
-dbhost=host_address
-dbname=postgres
-dbpass=postgres_pass
-dbport=5432
-
-postgres database details:
-create database awsResource;
+create .env file in main directory. And add postgres db credentials into that.<br>
+dbuser=postgres <br>
+dbhost=host_address <br>
+dbname=postgres <br>
+dbpass=postgres_pass <br>
+dbport=5432 
+<br>
+postgres database details:<br>
+create database awsResource;<br>
 create table orders(
 id serial primary key,
 name varchar,
