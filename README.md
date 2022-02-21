@@ -6,7 +6,7 @@ dbhost=host_address <br>
 dbname=postgres <br>
 dbpass=postgres_pass <br>
 dbport=5432 
-<br>
+<br><br><br>
 postgres database details:<br>
 create database awsResource;<br>
 create table orders(
